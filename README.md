@@ -7,4 +7,4 @@ A Flutter project base by Sakura.
 - Flutter: 2.10.5 (stable)
 
 ## Multi language gen locale_keys
- - flutter pub run easy_localization:generate -S assets/langs -O lib/presentation/language -f keys -o locale_keys.g.dart
+ - flutter pub run easy_localization:generate -S assets/langs -O lib/language -f keys -o locale_keys.g.dart
