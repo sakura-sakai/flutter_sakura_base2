@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_sakura_base2/core/utils/utils.dart';
@@ -6,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../core/const/constants.dart';
-import '../../../language/locale_keys.g.dart';
+import '../../../l10n/l10n_manager.dart';
 import '../../../route/router.dart';
 import '../../../theme/theme.dart';
 import '../../../widgets/elements/assets_gen/assets.gen.dart';
@@ -31,7 +30,7 @@ class SignUpPage extends HookConsumerWidget {
             children: <Widget>[
               SafeArea(child: SizedBox(height: 3.h)),
               TextView(
-                LocaleKeys.signUp.tr().toUpperCase(),
+                useL10n().signUp.toUpperCase(),
                 fontSize: FontSize.massive,
                 fontFamily: FontFamily.rotunda,
                 fontWeight: FontWeight.bold,
@@ -47,8 +46,8 @@ class SignUpPage extends HookConsumerWidget {
                   children: [
                     TextArea(
                       onSaved: (value) {},
-                      hintText: LocaleKeys.email.tr(),
-                      labelText: LocaleKeys.email.tr(),
+                      hintText: useL10n().email,
+                      labelText: useL10n().email,
                       isRequired: true,
                       textLightColor: AppColors.violet,
                       textType: TextType.email,
@@ -71,8 +70,8 @@ class SignUpPage extends HookConsumerWidget {
                     SizedBox(height: 1.h),
                     ObscureTextArea(
                       onSaved: (value) {},
-                      hintText: LocaleKeys.password.tr(),
-                      labelText: LocaleKeys.password.tr(),
+                      hintText: useL10n().password,
+                      labelText: useL10n().password,
                       isRequired: true,
                       textLightColor: AppColors.violet,
                       textType: TextType.password,
@@ -94,7 +93,7 @@ class SignUpPage extends HookConsumerWidget {
                     ),
                     SizedBox(height: 3.h),
                     LoadingButton(
-                      LocaleKeys.signUp.tr().toUpperCase(),
+                      useL10n().signUp.toUpperCase(),
                       buttonType: ButtonType.primaryLight,
                       buttonSize: ButtonSize.infinityWith,
                       onPressed: () async {
@@ -190,7 +189,7 @@ class _OrDivider extends HookWidget {
               horizontal: kDefaultExThinPadding,
             ),
             child: TextView(
-              LocaleKeys.or.tr(),
+              useL10n().or,
               fontWeight: FontWeight.w600,
               fontColor: AppColors.violet,
             ),

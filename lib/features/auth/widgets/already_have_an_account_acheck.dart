@@ -1,8 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-import '../../../language/locale_keys.g.dart';
+import '../../../l10n/l10n_manager.dart';
 import '../../../theme/theme.dart';
 import '../../../widgets/elements/text_view.dart';
 
@@ -23,14 +22,14 @@ class AlreadyHaveAnAccountCheck extends HookWidget {
       children: <Widget>[
         TextView(
           isLogin
-              ? LocaleKeys.doNotHaveAnAccount.tr()
-              : LocaleKeys.alreadyHaveAnAccount.tr(),
+              ? useL10n().doNotHaveAnAccount
+              : useL10n().alreadyHaveAnAccount,
           fontColor: AppColors.violet,
         ),
         GestureDetector(
           onTap: onTap,
           child: TextView(
-            isLogin ? LocaleKeys.signUp.tr() : LocaleKeys.signIn.tr(),
+            isLogin ? useL10n().signUp : useL10n().signIn,
             fontWeight: FontWeight.bold,
             fontColor: AppColors.violet,
           ),

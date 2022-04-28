@@ -4,7 +4,6 @@ import '../../../core/exceptions/exceptions.dart';
 import '../../core/view_controller/view_controller.dart';
 import '../../data/repositories/auth_repository.dart';
 import '../../data/request_param/authentication_request_params.dart';
-import '../../language/locale_keys.g.dart';
 import '../../route/router.dart';
 
 final authCtrlProvider = ChangeNotifierProvider.autoDispose<AuthController>(
@@ -85,10 +84,10 @@ class AuthController extends ViewController {
   String _getErrorMessageLogin(_AuthErrorStatus errorStatus) {
     switch (errorStatus) {
       case _AuthErrorStatus.connectionError:
-        return LocaleKeys.noInternet;
+        return l10n.noInternet;
 
       case _AuthErrorStatus.failed:
-        return LocaleKeys.loginInformationError;
+        return l10n.loginInformationError;
 
       default:
         return "";

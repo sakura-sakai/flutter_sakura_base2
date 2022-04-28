@@ -1,9 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_sakura_base2/core/utils/utils.dart';
 
-import '../../../language/locale_keys.g.dart';
+import '../../../l10n/l10n_manager.dart';
 import '../../../route/router.dart';
 import '../../../theme/theme.dart';
 import '../../../widgets/elements/assets_gen/assets.gen.dart';
@@ -25,7 +24,7 @@ class WelcomePage extends HookWidget {
             children: <Widget>[
               SafeArea(child: SizedBox(height: 3.h)),
               TextView(
-                LocaleKeys.welcome.tr().toUpperCase(),
+                useL10n().welcome.toUpperCase(),
                 fontSize: FontSize.massive,
                 fontFamily: FontFamily.rotunda,
                 fontWeight: FontWeight.bold,
@@ -41,7 +40,7 @@ class WelcomePage extends HookWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Button(
-                      LocaleKeys.login.tr().toUpperCase(),
+                      useL10n().login.toUpperCase(),
                       buttonSize: ButtonSize.infinityWith,
                       onPressed: () {
                         AppRouter().push(const LoginRoute());
@@ -49,7 +48,7 @@ class WelcomePage extends HookWidget {
                     ),
                     SizedBox(height: 2.h),
                     Button(
-                      LocaleKeys.signUp.tr().toUpperCase(),
+                      useL10n().signUp.toUpperCase(),
                       buttonType: ButtonType.primaryLight,
                       buttonSize: ButtonSize.infinityWith,
                       onPressed: () {

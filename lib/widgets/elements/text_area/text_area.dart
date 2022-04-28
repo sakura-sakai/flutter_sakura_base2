@@ -1,10 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:validators/validators.dart';
 
 import '../../../../core/const/constants.dart';
-import '../../../language/locale_keys.g.dart';
+import '../../../l10n/l10n_manager.dart';
 import '../../../theme/theme.dart';
 
 enum TextType {
@@ -26,25 +25,25 @@ extension TextTypeValidate on TextType {
     switch (this) {
       case TextType.text:
         if (!isLength(value, 1, _kStringMaxLength)) {
-          return LocaleKeys.errorMaxLengthInput.tr();
+          return useL10n().errorMaxLengthInput;
         }
         break;
 
       case TextType.password:
         if (!isAlphanumeric(value)) {
-          return LocaleKeys.errorFormatInputPassword;
+          return useL10n().errorFormatInputPassword;
         }
         if (!isLength(value, 1, _kStringMaxLength)) {
-          return LocaleKeys.errorMaxLengthInput.tr();
+          return useL10n().errorMaxLengthInput;
         }
         break;
 
       case TextType.email:
         if (!isEmail(value)) {
-          return LocaleKeys.errorFormatInputEmail.tr();
+          return useL10n().errorFormatInputEmail;
         }
         if (!isLength(value, 1, _kStringMaxLength)) {
-          return LocaleKeys.errorMaxLengthInput.tr();
+          return useL10n().errorMaxLengthInput;
         }
         break;
 
@@ -477,7 +476,7 @@ class TextArea extends HookWidget {
 
     if (isRequired) {
       if (value.isEmpty) {
-        return LocaleKeys.required.tr();
+        return useL10n().required;
       }
     }
 

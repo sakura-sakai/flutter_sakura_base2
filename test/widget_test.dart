@@ -7,7 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_sakura_base2/app/app.dart';
-import 'package:flutter_sakura_base2/app/multi_language_scope.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -15,10 +14,8 @@ void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      const MultiLanguageScope(
-        child: ProviderScope(
-          child: App(),
-        ),
+      const ProviderScope(
+        child: App(),
       ),
     );
 

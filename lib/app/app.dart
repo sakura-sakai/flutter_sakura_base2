@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../route/router.dart';
@@ -35,14 +35,14 @@ class App extends HookConsumerWidget {
             ),
 
             // Locale
-            localizationsDelegates: context.localizationDelegates,
-            supportedLocales: context.supportedLocales,
+            localizationsDelegates: L10n.localizationsDelegates,
+            supportedLocales: L10n.supportedLocales,
             locale: (!kReleaseMode && kIsWeb)
-                ?  DevicePreview.locale(context)
-                : context.locale,
+                ? DevicePreview.locale(context)
+                : null,
 
+            // DevicePreview
             builder: DevicePreview.appBuilder,
-
             useInheritedMediaQuery: true,
           ),
         );

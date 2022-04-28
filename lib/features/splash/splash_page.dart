@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sakura_base2/core/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -6,7 +5,7 @@ import 'package:shimmer/shimmer.dart';
 
 import '../../../core/const/constants.dart';
 import '../../functionals/functionals.dart';
-import '../../language/locale_keys.g.dart';
+import '../../l10n/l10n_manager.dart';
 import '../../theme/theme.dart';
 import '../../widgets/elements/button/button.dart';
 import '../../widgets/elements/text_view.dart';
@@ -26,7 +25,7 @@ class SplashPage extends HookConsumerWidget {
               baseColor: AppColors.violet,
               highlightColor: AppColors.white,
               child: TextView(
-                LocaleKeys.appName.tr(),
+                useL10n().appName,
                 fontSize: FontSize.massive.sp,
                 fontWeight: FontWeight.bold,
               ),
@@ -43,7 +42,7 @@ class SplashPage extends HookConsumerWidget {
                     builder: (context, future, isFutureExecuting) {
                       if (isFutureExecuting == false) {
                         return Button(
-                          LocaleKeys.retry,
+                          useL10n().retry,
                           buttonType: ButtonType.accent,
                           onPressed: future,
                         );
