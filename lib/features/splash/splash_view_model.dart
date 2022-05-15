@@ -1,14 +1,14 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../core/view_controller/view_controller.dart';
+import '../../core/view_model/view_model.dart';
 import '../../route/router.dart';
 
-final splashCtrlProvider = Provider.autoDispose<SplashController>(
-  (ref) => SplashController(ref.read),
+final splashCtrlProvider = Provider.autoDispose<SplashViewModel>(
+  (ref) => SplashViewModel(ref.read),
 );
 
-class SplashController extends ViewController {
-  SplashController(Reader read) : super(read);
+class SplashViewModel extends ViewModel {
+  SplashViewModel(Reader read) : super(read);
 
   Future<void> init() async {
     try {

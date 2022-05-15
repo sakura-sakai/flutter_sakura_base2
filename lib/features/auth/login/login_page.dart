@@ -13,7 +13,7 @@ import '../../../widgets/elements/button/button.dart';
 import '../../../widgets/elements/text_area/obscure_text_area.dart';
 import '../../../widgets/elements/text_area/text_area.dart';
 import '../../../widgets/elements/text_view.dart';
-import '../auth_controller.dart';
+import '../auth_view_model.dart';
 import '../widgets/already_have_an_account_acheck.dart';
 
 class LoginPage extends HookConsumerWidget {
@@ -22,7 +22,7 @@ class LoginPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final _formKey = useMemoized(GlobalKey<FormState>.new);
-    final viewCtrl = ref.read(authCtrlProvider);
+    final viewModel = ref.read(authVMProvider);
 
     return Scaffold(
       body: _Background(
@@ -48,7 +48,7 @@ class LoginPage extends HookConsumerWidget {
                   child: Column(
                     children: [
                       TextArea(
-                        onSaved: (value) => viewCtrl.email = value ?? '',
+                        onSaved: (value) => viewModel.email = value ?? '',
                         hintText: useL10n().email,
                         labelText: useL10n().email,
                         isRequired: true,
@@ -72,7 +72,7 @@ class LoginPage extends HookConsumerWidget {
                       ),
                       SizedBox(height: 1.h),
                       ObscureTextArea(
-                        onSaved: (value) => viewCtrl.password = value ?? '',
+                        onSaved: (value) => viewModel.password = value ?? '',
                         hintText: useL10n().password,
                         labelText: useL10n().password,
                         isRequired: true,

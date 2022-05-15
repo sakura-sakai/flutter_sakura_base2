@@ -1,13 +1,13 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/exceptions/exceptions.dart';
-import '../../core/view_controller/view_controller.dart';
+import '../../core/view_model/view_model.dart';
 import '../../data/repositories/auth_repository.dart';
 import '../../data/request_param/authentication_request_params.dart';
 import '../../route/router.dart';
 
-final authCtrlProvider = ChangeNotifierProvider.autoDispose<AuthController>(
-  (ref) => AuthController(ref.read),
+final authVMProvider = ChangeNotifierProvider.autoDispose<AuthViewModel>(
+  (ref) => AuthViewModel(ref.read),
 );
 
 enum _AuthErrorStatus {
@@ -15,8 +15,8 @@ enum _AuthErrorStatus {
   connectionError, // off-line
 }
 
-class AuthController extends ViewController {
-  AuthController(this.read) : super(read);
+class AuthViewModel extends ViewModel {
+  AuthViewModel(this.read) : super(read);
 
   final Reader read;
 

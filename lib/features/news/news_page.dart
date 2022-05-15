@@ -6,16 +6,16 @@ import '../../theme/theme.dart';
 import '../../widgets/elements/loading/indicator.dart';
 import '../../widgets/elements/text_view.dart';
 import 'elements/article_item.dart';
-import 'news_controller.dart';
+import 'news_view_model.dart';
 
 class NewsPage extends HookConsumerWidget {
   const NewsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final news = ref.watch(newsCtrlProvider.select((value) => value.news));
+    final news = ref.watch(newsVMProvider.select((value) => value.news));
 
-    useMemoized(ref.read(newsCtrlProvider).fetchNews, []);
+    useMemoized(ref.read(newsVMProvider).fetchNews, []);
 
     return Scaffold(
       appBar: AppBar(
@@ -26,7 +26,7 @@ class NewsPage extends HookConsumerWidget {
         ),
       ),
       body: RefreshIndicator(
-        onRefresh: () async => ref.read(newsCtrlProvider).fetchNews(),
+        onRefresh: () async => ref.read(newsVMProvider).fetchNews(),
         child: news.when(
           data: (data) {
             return ListView.builder(

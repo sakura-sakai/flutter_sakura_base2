@@ -9,7 +9,7 @@ import '../../l10n/l10n_manager.dart';
 import '../../theme/theme.dart';
 import '../../widgets/elements/button/button.dart';
 import '../../widgets/elements/text_view.dart';
-import 'splash_controller.dart';
+import 'splash_view_model.dart';
 
 class SplashPage extends HookConsumerWidget {
   const SplashPage({Key? key}) : super(key: key);

@@ -10,8 +10,8 @@ import '../../core/services/other/network.dart';
 import '../../l10n/l10n_manager.dart';
 import '../../route/router.dart';
 
-abstract class ViewController extends ChangeNotifier with Network {
-  ViewController(Reader read, {List<Object?>? keys}) {
+abstract class ViewModel extends ChangeNotifier with Network {
+  ViewModel(Reader read, {List<Object?>? keys}) {
     _read = read;
 
     useEffect(

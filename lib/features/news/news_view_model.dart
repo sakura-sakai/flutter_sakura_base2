@@ -3,18 +3,18 @@ import 'dart:math';
 import 'package:flutter_sakura_base2/core/utils/extensions/date_time.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../core/view_controller/view_controller.dart';
+import '../../core/view_model/view_model.dart';
 import '../../data/model/news_model.dart';
 import '../../data/repositories/news_repository.dart';
 import '../../data/request_param/news_request_params.dart';
 
 
-final newsCtrlProvider = ChangeNotifierProvider(
-  (ref) => NewsController(ref.read),
+final newsVMProvider = ChangeNotifierProvider(
+  (ref) => NewsViewModel(ref.read),
 );
 
-class NewsController extends ViewController {
-  NewsController(Reader reader) : super(reader);
+class NewsViewModel extends ViewModel {
+  NewsViewModel(Reader reader) : super(reader);
 
   final NewsRepository newsRepository = NewsRepository();
 
