@@ -1,29 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../core/exceptions/exceptions.dart';
-import '../../core/services/other/network.dart';
 import '../../l10n/l10n_manager.dart';
 import '../../route/router.dart';
+import '../../widgets/stless/loading/loading_provider.dart';
+import '../services/other/network.dart';
 
 abstract class ViewModel extends ChangeNotifier with Network {
-  ViewModel(Reader read, {List<Object?>? keys}) {
-    _read = read;
+  ViewModel(Reader read) : _read = read;
 
-    useEffect(
-      () {
-        onInit();
-        return onDispose;
-      },
-      keys,
-    );
-  }
+  final Reader _read;
 
-  late final Reader _read;
+  LoadingProvider get loadingState => _read(loadingProvider.notifier);
 
   StackRouter get router => _read(routerProvider);
 
@@ -45,7 +36,7 @@ abstract class ViewModel extends ChangeNotifier with Network {
   /// This method should only be called by the object's owner.
   @override
   void dispose() {
-    isDisposed = false;
+    isDisposed = true;
     super.dispose();
   }
 
@@ -60,25 +51,11 @@ abstract class ViewModel extends ChangeNotifier with Network {
   /// But it won't call [notifyListeners] if [isDisposed] = true.
   /// So please call [updateState] instead of [notifyListeners].
   void updateState() {
-    if (!isDisposed) notifyListeners();
-  }
+    if (isDisposed) {
+      assert(throw Exception('ViewModel Disposed'));
+      return;
+    }
 
-  /// [onInit] the same as [initState] of [StatefulWidget].
-  ///
-  /// But it is called by [useEffect] (Hook lifecycle).
-  @protected
-  @mustCallSuper
-  void onInit() {
-    isDisposed = false;
-  }
-
-  /// [onDispose] the same as [dispose] of [StatefulWidget].
-  ///
-  /// But it is called by [useEffect] (Hook lifecycle).
-  @protected
-  @mustCallSuper
-  void onDispose() {
-    isDisposed = true;
-    // super.dispose();
+    notifyListeners();
   }
 }
