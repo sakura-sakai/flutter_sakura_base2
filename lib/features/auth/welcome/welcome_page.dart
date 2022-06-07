@@ -5,10 +5,10 @@ import 'package:flutter_sakura_base2/core/utils/utils.dart';
 import '../../../l10n/l10n_manager.dart';
 import '../../../route/router.dart';
 import '../../../theme/theme.dart';
-import '../../../widgets/elements/assets_gen/assets.gen.dart';
-import '../../../widgets/elements/assets_gen/fonts.gen.dart';
-import '../../../widgets/elements/button/button.dart';
-import '../../../widgets/elements/text_view.dart';
+import '../../../widgets/stless/assets_gen/assets.gen.dart';
+import '../../../widgets/stless/assets_gen/fonts.gen.dart';
+import '../../../widgets/stless/button/button.dart';
+import '../../../widgets/stless/text_view.dart';
 
 class WelcomePage extends HookWidget {
   const WelcomePage({Key? key}) : super(key: key);

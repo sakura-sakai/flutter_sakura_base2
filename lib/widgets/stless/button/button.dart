@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../../core/const/constants.dart';
-import '../../../functionals/functionals.dart';
 import '../../../theme/theme.dart';
+import '../../stfuls/lazy_future_builder.dart';
 import '../loading/indicator.dart';
 
 part 'loading_button.dart';

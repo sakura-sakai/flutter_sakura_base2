@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:video_player/video_player.dart';
 
-import '../../functionals/functionals.dart';
-import '../../widgets/elements/assets_gen/assets.gen.dart';
+import '../../hook/asset_video_player_controller.hook.dart';
+import '../../widgets/stless/assets_gen/assets.gen.dart';
 
 class VideoPage extends HookConsumerWidget {
   const VideoPage({Key? key}) : super(key: key);

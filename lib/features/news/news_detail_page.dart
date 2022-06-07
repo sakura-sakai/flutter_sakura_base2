@@ -4,7 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../data/model/article_model.dart';
 import '../../route/router.dart';
-import '../../widgets/elements/image/image.dart';
+import '../../widgets/stless/image/image.dart';
 
 class NewsDetailPage extends HookWidget {
   const NewsDetailPage({

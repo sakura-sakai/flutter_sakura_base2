@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../route/router.dart';
 import '../../theme/theme.dart';
-import '../../widgets/elements/assets_gen/assets.gen.dart';
+import '../../widgets/stless/assets_gen/assets.gen.dart';
 
 class HomePage extends HookConsumerWidget {
   const HomePage({Key? key}) : super(key: key);

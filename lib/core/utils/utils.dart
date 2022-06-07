@@ -7,4 +7,5 @@ import 'package:flutter/material.dart';
 
 part 'extensions/list.dart';
 part 'extensions/num.dart';
-part 'responsive.dart';
+
+part 'reponsive/responsive.dart';

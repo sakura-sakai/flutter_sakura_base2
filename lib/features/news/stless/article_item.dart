@@ -3,8 +3,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../data/model/article_model.dart';
 import '../../../route/router.dart';
-import '../../../widgets/elements/image/image.dart';
-import '../../../widgets/elements/text_view.dart';
+import '../../../widgets/stless/image/image.dart';
+import '../../../widgets/stless/text_view.dart';
 
 class ArticleItem extends HookConsumerWidget {
   const ArticleItem({

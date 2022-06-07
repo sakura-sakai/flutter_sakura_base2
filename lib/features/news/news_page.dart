@@ -3,10 +3,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../theme/theme.dart';
-import '../../widgets/elements/loading/indicator.dart';
-import '../../widgets/elements/text_view.dart';
-import 'elements/article_item.dart';
+import '../../widgets/stless/loading/indicator.dart';
+import '../../widgets/stless/text_view.dart';
 import 'news_view_model.dart';
+import 'stless/article_item.dart';
 
 class NewsPage extends HookConsumerWidget {
   const NewsPage({Key? key}) : super(key: key);

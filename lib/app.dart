@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../route/router.dart';
-import '../theme/theme.dart';
-import 'app_responsive.dart';
+import 'core/utils/reponsive/app_responsive.dart';
+import 'route/router.dart';
+import 'theme/theme.dart';
 
 class App extends HookConsumerWidget {
   const App({Key? key}) : super(key: key);

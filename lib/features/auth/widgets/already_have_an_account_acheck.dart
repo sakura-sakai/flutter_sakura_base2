@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../l10n/l10n_manager.dart';
 import '../../../theme/theme.dart';
-import '../../../widgets/elements/text_view.dart';
+import '../../../widgets/stless/text_view.dart';
 
 class AlreadyHaveAnAccountCheck extends HookWidget {
   const AlreadyHaveAnAccountCheck({

@@ -1,4 +1,7 @@
-part of functionals;
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
 int useInfiniteTimer() {
   return use(const _InfiniteTimer());

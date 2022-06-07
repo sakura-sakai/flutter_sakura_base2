@@ -4,11 +4,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../core/const/constants.dart';
-import '../../functionals/functionals.dart';
 import '../../l10n/l10n_manager.dart';
 import '../../theme/theme.dart';
-import '../../widgets/elements/button/button.dart';
-import '../../widgets/elements/text_view.dart';
+import '../../widgets/stfuls/lazy_future_builder.dart';
+import '../../widgets/stless/button/button.dart';
+import '../../widgets/stless/text_view.dart';
 import 'splash_view_model.dart';
 
 class SplashPage extends HookConsumerWidget {

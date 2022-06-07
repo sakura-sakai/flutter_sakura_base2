@@ -8,12 +8,12 @@ import '../../../../core/const/constants.dart';
 import '../../../l10n/l10n_manager.dart';
 import '../../../route/router.dart';
 import '../../../theme/theme.dart';
-import '../../../widgets/elements/assets_gen/assets.gen.dart';
-import '../../../widgets/elements/assets_gen/fonts.gen.dart';
-import '../../../widgets/elements/button/button.dart';
-import '../../../widgets/elements/text_area/obscure_text_area.dart';
-import '../../../widgets/elements/text_area/text_area.dart';
-import '../../../widgets/elements/text_view.dart';
+import '../../../widgets/stless/assets_gen/assets.gen.dart';
+import '../../../widgets/stless/assets_gen/fonts.gen.dart';
+import '../../../widgets/stless/button/button.dart';
+import '../../../widgets/stless/text_area/obscure_text_area.dart';
+import '../../../widgets/stless/text_area/text_area.dart';
+import '../../../widgets/stless/text_view.dart';
 import '../widgets/already_have_an_account_acheck.dart';
 
 class SignUpPage extends HookConsumerWidget {
