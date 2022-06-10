@@ -4,28 +4,28 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../route/router.dart';
 import 'indicator.dart';
 
-final loadingProvider = StateNotifierProvider<LoadingProvider, bool>(
+final loadingProvider = Provider(
   (ref) => LoadingProvider(ref.read),
 );
 
-class LoadingProvider extends StateNotifier<bool> {
-  LoadingProvider(Reader read)
-      : _read = read,
-        super(false);
+class LoadingProvider {
+  LoadingProvider(Reader read) : _read = read;
 
   final Reader _read;
 
   BuildContext get _context => _read(contextProvider);
 
+  bool isShowLoading = false;
+
   void show() {
-    if (state) return;
-    state = true;
+    if (isShowLoading) return;
+    isShowLoading = true;
     _showLoading(_context);
   }
 
   void hide() {
-    if (!state) return;
-    state = false;
+    if (!isShowLoading) return;
+    isShowLoading = false;
     _hideLoading();
   }
 

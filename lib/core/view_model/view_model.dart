@@ -14,7 +14,7 @@ abstract class ViewModel extends ChangeNotifier with Network {
 
   final Reader _read;
 
-  LoadingProvider get loadingState => _read(loadingProvider.notifier);
+  LoadingProvider get loading => _read(loadingProvider);
 
   StackRouter get router => _read(routerProvider);
 
